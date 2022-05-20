@@ -1,21 +1,46 @@
 import java.util.ArrayList;
 
 public class Giocatore {
-
-    private boolean vincitore=false;
     private TamaGolem squadra[];
-    private int golemVivi;
     private String nome;
+    private int golemVivo;
 
     public Giocatore(String nome,int numeroGolem){
         this.nome=nome;
         squadra= new TamaGolem[numeroGolem];
     }
 
-    public void setTamaGolem(int idx, String[] elementi, int salute){
-        squadra[idx]=new TamaGolem(salute, elementi);
+    public void setTamaGolem( String[] elementi, int salute){
+        int i;
+        for(i=0;i< squadra.length;i++){
+            if(squadra[i]==null)
+                break;
+        }
+        squadra[i]=new TamaGolem(salute, elementi);
+        golemVivo=i;
     }
     public String getNome() {
         return nome;
+    }
+    public boolean hasAltriGolem(){
+        boolean r=false;
+        for(int i=0;i< squadra.length;i++)
+            if(squadra[i].isAlive())
+                r=true;
+
+        return r;
+    }
+    public boolean hasNullGolem(){
+        boolean r=false;
+        for(int i=0;i< squadra.length;i++)
+            if(squadra[i] == null)
+                r=true;
+        return r;
+    }
+    public TamaGolem getGolem(int idx){
+        return squadra[idx];
+    }
+    public int getGolemVivo() {
+        return golemVivo;
     }
 }

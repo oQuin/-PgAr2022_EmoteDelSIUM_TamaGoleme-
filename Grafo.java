@@ -119,7 +119,11 @@ public class Grafo
 			
 		}
 	}
-	
+
+	public int[][] getMatriceDiEquilibrio(){
+		return matAdiacenza;
+	}
+
 	public void stampa() //metodo temporaneo: mi serve solo per verificare la correttezza del grafo
 	{
 		for(int i=0;i<matAdiacenza.length;i++)
