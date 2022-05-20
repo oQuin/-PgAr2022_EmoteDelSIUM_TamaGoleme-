@@ -22,13 +22,12 @@ public class Giocatore {
     public String getNome() {
         return nome;
     }
-    public boolean hasAltriGolem(){
-        boolean r=false;
-        for(int i=0;i< squadra.length;i++)
-            if(squadra[i].isAlive())
-                r=true;
+    public boolean hasAltriGolem(int max){
+        if(golemVivo==max-1)
+            if(!squadra[max-1].isAlive())
+                return false;
 
-        return r;
+        return true;
     }
     public boolean hasNullGolem(){
         boolean r=false;

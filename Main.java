@@ -77,14 +77,14 @@ public class Main
 				}
 
 			}while(golemPrimo.isAlive() && golemSecon.isAlive());
-
-
-			System.out.println("ciao");
-
-		}while(giocatori[start].hasAltriGolem() && giocatori[scn].hasAltriGolem());
+		}while(giocatori[start].hasAltriGolem(NUM_TAMAGOLEM) && giocatori[scn].hasAltriGolem(NUM_TAMAGOLEM));
 
 		//Fase 3: Dichiarazione del vincitore
-	    
+	    if(giocatori[start].hasAltriGolem(NUM_TAMAGOLEM)){
+			System.out.println("Ha vinto "+giocatori[scn].getNome());
+		}else{
+			System.out.println("Ha vinto "+giocatori[start].getNome());
+		}
 	} 		
 
 	private static void generaGolem(Giocatore a){
