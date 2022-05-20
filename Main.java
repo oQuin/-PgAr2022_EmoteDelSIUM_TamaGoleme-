@@ -69,7 +69,7 @@ public class Main
 				int indiceTabellaSecon = java.util.Arrays.asList(ELEMENTI).indexOf(attaccoTamaSecon);
 
 				int dannoPrimoSuSecondo = matriceEquilibrio[indiceTabellaPrimo][indiceTabellaSecon];
-				int dannoSecondoSuPrimo = matriceEquilibrio[indiceTabellaSecon][indiceTabellaSecon];
+				int dannoSecondoSuPrimo = matriceEquilibrio[indiceTabellaSecon][indiceTabellaPrimo];
 				if(dannoPrimoSuSecondo>dannoSecondoSuPrimo){
 					golemSecon.getDamaged(dannoPrimoSuSecondo);
 				}else{
